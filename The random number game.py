@@ -5,7 +5,7 @@
 import random
 import time
 
-
+# Funtion for checking if the user input a number and asking for one in case is not.
 def need_a_number(user_input):
     while not user_input.isnumeric():
         time.sleep(.4)
@@ -16,7 +16,7 @@ def need_a_number(user_input):
 
 
 print("Hey!")
-time.sleep(1)
+time.sleep(2)
 input("( You are supposed to hit ENTER each time I talk. 😊 )")
 time.sleep(.2)
 input("That's it 😁")
@@ -30,9 +30,10 @@ input("\nBut stop talking and lets play the game :D")
 time.sleep(.6)
 
 
-player_name = input("\nFirst. What's your name? ").capitalize()
+player_name = input("\nFirst. What's your name? Just type it and press ENTER again. ").capitalize()
 while player_name == "":
 
+    # Printing 3 dots
     for i in range(3):
         time.sleep(.6)
         print(". ")
@@ -50,6 +51,9 @@ input("\nWhat you have to do is guess it in the minimum number of attemps.")
 time.sleep(.6)
 is_the_player_ready = input("\nAre you ready? ")
 while is_the_player_ready.lower() != "yes":
+    if is_the_player_ready.lower() == "yep":
+        time.sleep(.5)
+        print('\nCome on. Not "yep".')
     time.sleep(.5)
     print('\nYou were supposed to say "Yes". Is not that difficult.\n')
     time.sleep(.5)
@@ -57,7 +61,7 @@ while is_the_player_ready.lower() != "yes":
 
 random_number = random.randint(0, 20)
 time.sleep(.5)
-guessed_number = input("\nThen what's your first guess? ")
+guessed_number = input("\nThen what's your first guess? (just type it and hit ENTER again) ")
 guessed_number = need_a_number(guessed_number)
 
 attemps = 1
